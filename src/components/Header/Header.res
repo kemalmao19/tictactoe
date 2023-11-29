@@ -1,5 +1,5 @@
-let x = <img src="/icon-x.svg" width="20" height="20"/>
-let o = <img src="/icon-o.svg" width="20" height="20"/>
+let x = <img src="/icon-x.svg" width={"20"} height={"20"}/>
+let o = <img src="/icon-o.svg" width={"20"} height={"20"}/>
 
 @react.component
 let make = (~turn) => {
