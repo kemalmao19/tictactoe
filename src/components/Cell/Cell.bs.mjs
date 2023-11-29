@@ -12,29 +12,24 @@ var o = JsxRuntime.jsx("img", {
 
 function Cell(props) {
   var value = props.value;
-  var hoverClass = function (x) {
-    switch (x) {
+  var hoverClass = function (value, turn) {
+    if (value !== "") {
+      return "";
+    }
+    switch (turn) {
       case "o" :
           return "o-hover";
       case "x" :
           return "x-hover";
       default:
-        throw {
-              RE_EXN_ID: "Match_failure",
-              _1: [
-                "Cell.res",
-                6,
-                28
-              ],
-              Error: new Error()
-            };
+        return "";
     }
   };
   return JsxRuntime.jsx("div", {
               children: value === "x" ? x : (
                   value === "o" ? o : JsxRuntime.jsx(JsxRuntime.Fragment, {})
                 ),
-              className: "flex justify-center items-center text-6xl mt-2 h-40 w-40 bg-slate-700 rounded-xl cursor-pointer " + hoverClass(props.turn) + "",
+              className: "flex justify-center items-center text-6xl mt-2 h-40 w-40 bg-slate-700 rounded-xl cursor-pointer " + hoverClass(value, props.turn) + "",
               id: "cell",
               onClick: props.onClick
             });
