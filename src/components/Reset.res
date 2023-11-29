@@ -1,6 +1,13 @@
+open State
 @react.component
-let make = () => {
-    <div id="btn" className="flex justify-center items-center text-lime-300 bg-slate-700 w-40 h-20 rounded-full cursor-pointer text-2xl mt-10 mb-10">
+let make = (~setBoard) => {
+    let handleReset = () => {
+        setBoard(_=>state)
+    }
+    <button 
+        id="btn"
+        onClick={_=>handleReset()} 
+        className="flex justify-center items-center text-orange-300 hover:text-slate-700 bg-slate-700 hover:bg-orange-300 w-40 h-20 rounded-full text-2xl font-bold mt-10">
         {React.string("Reset")}
-    </div>
+    </button>
 }

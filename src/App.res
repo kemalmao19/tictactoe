@@ -20,13 +20,10 @@ let make = () => {
     };
   };
 
-  <div className="bg-slate-900 flex flex-col justify-center items-center"> 
-    <div id="title" className="text-center pt-10 text-slate-100">
-      <h1 id="heading" className="text-6xl font-bold flex justify-center"><span className="text-lime-300 pr-3">{React.string("Rescript")}</span>{React.string(" TicTacToe Game")}</h1>
-      <p>{React.string("This App created using rescript")}</p>
-    </div>
+  <div className="bg-slate-900 flex flex-col items-center py-10"> 
+    <Header turn=turn/>
     <Board turn={turn} cell={cell} cellClick={handleClick}/>
-    <Reset />
+    <Reset setBoard=setCell/>
   </div>
 
 }

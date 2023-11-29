@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 .x-hover:hover::after {
-    content: url("/public/icon-x-outline.svg");
+    content: url("/icon-x-outline.svg");
 }
 .o-hover:hover::after {
-    content: url("/public/icon-o-outline.svg");
+    content: url("/icon-o-outline.svg");
 }
