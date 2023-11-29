@@ -1,0 +1,28 @@
+{
+  "name": "tictactoe",
+  "sources": [
+    {
+      "dir": "src",
+      "subdirs": true
+    }
+  ],
+  "package-specs": [
+    {
+      "module": "es6",
+      "in-source": true
+    }
+  ],
+  "suffix": ".bs.mjs",
+  "bs-dependencies": [
+    "@rescript/react",
+    "@rescript/core",
+    "rescript-webapi"
+  ],
+  "jsx": {
+    "version": 4,
+    "mode": "automatic"
+  },
+  "bsc-flags": [
+    "-open RescriptCore"
+  ]
+}
