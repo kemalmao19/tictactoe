@@ -16,7 +16,7 @@ let make = (~value, ~turn, ~onClick) => {
     <div 
         id="cell" 
         onClick={onClick} 
-        className=`flex justify-center items-center text-6xl mt-2 h-40 w-40 bg-slate-700 rounded-xl cursor-pointer ${hoverClass(value, turn)}`>
+        className=`flex justify-center items-center text-6xl mt-2 h-40 w-40 bg-slate-700 rounded-xl cursor-pointer ${hoverClass(value, turn)} shadow-xl border-2 border-cyan-300`>
         {value==="x"? x: value==="o"? o: <></>}
     </div>
 }

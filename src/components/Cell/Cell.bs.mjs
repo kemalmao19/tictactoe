@@ -29,7 +29,7 @@ function Cell(props) {
               children: value === "x" ? x : (
                   value === "o" ? o : JsxRuntime.jsx(JsxRuntime.Fragment, {})
                 ),
-              className: "flex justify-center items-center text-6xl mt-2 h-40 w-40 bg-slate-700 rounded-xl cursor-pointer " + hoverClass(value, props.turn) + "",
+              className: "flex justify-center items-center text-6xl mt-2 h-40 w-40 bg-slate-700 rounded-xl cursor-pointer " + hoverClass(value, props.turn) + " shadow-xl border-2 border-cyan-300",
               id: "cell",
               onClick: props.onClick
             });

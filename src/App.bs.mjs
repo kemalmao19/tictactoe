@@ -2,10 +2,11 @@
 
 import * as Board from "./components/Board/Board.bs.mjs";
 import * as Curry from "rescript/lib/es6/curry.js";
-import * as Reset from "./components/Reset.bs.mjs";
+import * as Reset from "./components/Reset/Reset.bs.mjs";
 import * as State from "./components/State/State.bs.mjs";
 import * as React from "react";
 import * as Header from "./components/Header/Header.bs.mjs";
+import * as Belt_Option from "rescript/lib/es6/belt_Option.js";
 import * as JsxRuntime from "react/jsx-runtime";
 
 function App(props) {
@@ -38,6 +39,26 @@ function App(props) {
                   }));
     }
   };
+  React.useEffect((function () {
+          return (function (param) {
+                    for(var i = 0 ,i_finish = State.winningCombination.length; i < i_finish; ++i){
+                      var combo = State.winningCombination[i];
+                      var cellCombo = Belt_Option.getWithDefault(combo, []);
+                      if (cellCombo.length !== 3) {
+                        throw {
+                              RE_EXN_ID: "Match_failure",
+                              _1: [
+                                "App.res",
+                                27,
+                                10
+                              ],
+                              Error: new Error()
+                            };
+                      }
+                      
+                    }
+                  });
+        }), [cell]);
   return JsxRuntime.jsxs("div", {
               children: [
                 JsxRuntime.jsx(Header.make, {

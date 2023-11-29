@@ -20,6 +20,25 @@ let make = () => {
     };
   };
 
+  let checkWinner = (cells) => {
+    for i in 0 to winningCombination->Belt.Array.length - 1 {
+      let combo = winningCombination[i]
+      let cellCombo = Belt.Option.getWithDefault(combo, [])
+      let [a,b,c] = cellCombo
+      // if (a !== 0 &&
+      //     a === b &&
+      //     a === c) {
+      //       Js.log("win")
+      //     } else {
+      //       Js.log("lose")
+      //     }
+    }
+  }
+
+  React.useEffect1(()=>{
+    Some(()=>checkWinner())
+  }, [cell])
+
   <div className="bg-slate-900 flex flex-col items-center py-10"> 
     <Header turn=turn/>
     <Board turn={turn} cell={cell} cellClick={handleClick}/>
