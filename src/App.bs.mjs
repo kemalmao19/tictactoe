@@ -46,40 +46,67 @@ function App(props) {
   React.useEffect(function () {
         return (function (param) {
                   if (cell[0] === cell[1] && cell[1] === cell[2] && cell[2] !== "") {
-                    return Curry._1(setGame, (function (param) {
-                                  return false;
+                    Curry._1(setGame, (function (param) {
+                            return false;
+                          }));
+                    return Curry._1(setCell, (function (param) {
+                                  return State.state;
                                 }));
                   } else if (cell[3] === cell[4] && cell[3] === cell[5] && cell[5] !== "") {
-                    return Curry._1(setGame, (function (param) {
-                                  return false;
+                    Curry._1(setGame, (function (param) {
+                            return false;
+                          }));
+                    return Curry._1(setCell, (function (param) {
+                                  return State.state;
                                 }));
                   } else if (cell[6] === cell[7] && cell[7] === cell[8] && cell[8] !== "") {
-                    return Curry._1(setGame, (function (param) {
-                                  return false;
+                    Curry._1(setGame, (function (param) {
+                            return false;
+                          }));
+                    return Curry._1(setCell, (function (param) {
+                                  return State.state;
                                 }));
                   } else if (cell[0] === cell[3] && cell[3] === cell[6] && cell[6] !== "") {
-                    return Curry._1(setGame, (function (param) {
-                                  return false;
+                    Curry._1(setGame, (function (param) {
+                            return false;
+                          }));
+                    return Curry._1(setCell, (function (param) {
+                                  return State.state;
                                 }));
                   } else if (cell[1] === cell[4] && cell[4] === cell[7] && cell[7] !== "") {
-                    return Curry._1(setGame, (function (param) {
-                                  return false;
+                    Curry._1(setGame, (function (param) {
+                            return false;
+                          }));
+                    return Curry._1(setCell, (function (param) {
+                                  return State.state;
                                 }));
                   } else if (cell[2] === cell[5] && cell[5] === cell[8] && cell[8] !== "") {
-                    return Curry._1(setGame, (function (param) {
-                                  return false;
+                    Curry._1(setGame, (function (param) {
+                            return false;
+                          }));
+                    return Curry._1(setCell, (function (param) {
+                                  return State.state;
                                 }));
                   } else if (cell[0] === cell[4] && cell[4] === cell[8] && cell[8] !== "") {
-                    return Curry._1(setGame, (function (param) {
-                                  return false;
+                    Curry._1(setGame, (function (param) {
+                            return false;
+                          }));
+                    return Curry._1(setCell, (function (param) {
+                                  return State.state;
                                 }));
                   } else if (cell[0] === cell[1] && cell[1] === cell[2] && cell[2] !== "") {
-                    return Curry._1(setGame, (function (param) {
-                                  return false;
+                    Curry._1(setGame, (function (param) {
+                            return false;
+                          }));
+                    return Curry._1(setCell, (function (param) {
+                                  return State.state;
                                 }));
                   } else if (cell[2] === cell[4] && cell[4] === cell[6] && cell[6] !== "") {
-                    return Curry._1(setGame, (function (param) {
-                                  return false;
+                    Curry._1(setGame, (function (param) {
+                            return false;
+                          }));
+                    return Curry._1(setCell, (function (param) {
+                                  return State.state;
                                 }));
                   } else {
                     return ;

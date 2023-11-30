@@ -23,6 +23,7 @@ let make = () => {
 
   let won = () => {
     setGame(_=>false)
+    setCell(_=>state)
   }
 
   let checkWin = () => {
