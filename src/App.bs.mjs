@@ -74,7 +74,7 @@ function App(props) {
                       playerTurn: setTurn
                     })
               ],
-              className: "flex flex-col items-center py-10"
+              className: "flex flex-col items-center justify-center h-screen my-10"
             });
 }
 
