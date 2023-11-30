@@ -22,6 +22,7 @@ function App(props) {
   var match$2 = React.useState(function () {
         return true;
       });
+  var setGame = match$2[1];
   var handleClick = function (index) {
     if (cell[index] !== "") {
       return ;
@@ -41,6 +42,52 @@ function App(props) {
                   }));
     }
   };
+  var checkWin = function (param) {
+    if (cell[0] === cell[1] && cell[1] === cell[2] && cell[2] !== "") {
+      return Curry._1(setGame, (function (param) {
+                    return false;
+                  }));
+    } else if (cell[3] === cell[4] && cell[3] === cell[5] && cell[5] !== "") {
+      return Curry._1(setGame, (function (param) {
+                    return false;
+                  }));
+    } else if (cell[6] === cell[7] && cell[7] === cell[8] && cell[8] !== "") {
+      return Curry._1(setGame, (function (param) {
+                    return false;
+                  }));
+    } else if (cell[0] === cell[3] && cell[3] === cell[6] && cell[6] !== "") {
+      return Curry._1(setGame, (function (param) {
+                    return false;
+                  }));
+    } else if (cell[1] === cell[4] && cell[4] === cell[7] && cell[7] !== "") {
+      return Curry._1(setGame, (function (param) {
+                    return false;
+                  }));
+    } else if (cell[2] === cell[5] && cell[5] === cell[8] && cell[8] !== "") {
+      return Curry._1(setGame, (function (param) {
+                    return false;
+                  }));
+    } else if (cell[0] === cell[4] && cell[4] === cell[8] && cell[8] !== "") {
+      return Curry._1(setGame, (function (param) {
+                    return false;
+                  }));
+    } else if (cell[0] === cell[1] && cell[1] === cell[2] && cell[2] !== "") {
+      return Curry._1(setGame, (function (param) {
+                    return false;
+                  }));
+    } else if (cell[2] === cell[4] && cell[4] === cell[6] && cell[6] !== "") {
+      return Curry._1(setGame, (function (param) {
+                    return false;
+                  }));
+    } else {
+      return ;
+    }
+  };
+  React.useEffect((function () {
+          return (function (param) {
+                    checkWin(undefined);
+                  });
+        }), [cell]);
   return JsxRuntime.jsxs("div", {
               children: [
                 JsxRuntime.jsx(Header.make, {
@@ -54,7 +101,8 @@ function App(props) {
                     }),
                 JsxRuntime.jsx(Reset.make, {
                       setBoard: setCell,
-                      playerTurn: setTurn
+                      playerTurn: setTurn,
+                      onGame: checkWin
                     })
               ],
               className: "flex flex-col items-center justify-center h-screen lg:my-10"

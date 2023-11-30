@@ -21,10 +21,48 @@ let make = () => {
     };
   };
 
+  let won = () => {
+    setGame(_=>false)
+  }
+
+  let checkWin = () => {
+    if cell[0]===cell[1] && cell[1]===cell[2] && cell[2]!==Some("") {
+      won()
+    }
+    else if cell[3]===cell[4] && cell[3]===cell[5] && cell[5]!==Some("") {
+      won()
+    }
+    else if cell[6]===cell[7] && cell[7]===cell[8] && cell[8]!==Some("") {
+      won()
+    }
+    else if cell[0]===cell[3] && cell[3]===cell[6] && cell[6]!==Some("") {
+      won()
+    }
+    else if cell[1]===cell[4] && cell[4]===cell[7] && cell[7]!==Some("") {
+      won()
+    }
+    else if cell[2]===cell[5] && cell[5]===cell[8] && cell[8]!==Some("") {
+      won()
+    }
+    else if cell[0]===cell[4] && cell[4]===cell[8] && cell[8]!==Some("") {
+      won()
+    }
+    else if cell[0]===cell[1] && cell[1]===cell[2] && cell[2]!==Some("") {
+      won()
+    }
+    else if cell[2]===cell[4] && cell[4]===cell[6] && cell[6]!==Some("") {
+      won()
+    }
+  }
+
+  React.useEffect1(()=>{
+    Some(()=>checkWin())
+  }, [cell])
+
   <div className="flex flex-col items-center justify-center h-screen lg:my-10"> 
     <Header turn=turn/>
     <Board onGame={game} turn={turn} cell={cell} cellClick={handleClick}/>
-    <Reset setBoard=setCell playerTurn=setTurn />
+    <Reset setBoard=setCell playerTurn=setTurn onGame=checkWin />
   </div>
 
 }

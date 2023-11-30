@@ -5,6 +5,7 @@ import * as State from "../State/State.bs.mjs";
 import * as JsxRuntime from "react/jsx-runtime";
 
 function Reset(props) {
+  var onGame = props.onGame;
   var playerTurn = props.playerTurn;
   var setBoard = props.setBoard;
   return JsxRuntime.jsx("button", {
@@ -18,6 +19,7 @@ function Reset(props) {
                   Curry._1(playerTurn, (function (param) {
                           return "x";
                         }));
+                  Curry._1(onGame, undefined);
                 })
             });
 }

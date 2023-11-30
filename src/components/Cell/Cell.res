@@ -16,7 +16,7 @@ let make = (~value, ~turn, ~onClick, ~game) => {
 
     <div 
         id="cell" 
-        onClick={game? onClick:(e)=>()} 
+        onClick={game? onClick:_=>()} 
         className=`flex justify-center items-center text-6xl mt-2 h-20 w-20 md:h-30 md:w-30 lg:h-40 lg:w-40 bg-slate-700 rounded-xl cursor-pointer ${hoverClass(value, turn)} shadow-xl border-2 border-cyan-300`
     >
         {value==="x"? x: value==="o"? o: <></>}

@@ -35,7 +35,7 @@ function Cell(props) {
                 ),
               className: "flex justify-center items-center text-6xl mt-2 h-20 w-20 md:h-30 md:w-30 lg:h-40 lg:w-40 bg-slate-700 rounded-xl cursor-pointer " + hoverClass(value, props.turn) + " shadow-xl border-2 border-cyan-300",
               id: "cell",
-              onClick: props.game ? props.onClick : (function (e) {
+              onClick: props.game ? props.onClick : (function (param) {
                     
                   })
             });
