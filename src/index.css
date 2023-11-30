@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    body {
+        @apply bg-slate-800
+    }
+}
+
 .x-hover:hover::after {
     content: url("/icon-x-outline.svg");
 }

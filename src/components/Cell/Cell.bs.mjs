@@ -3,11 +3,15 @@
 import * as JsxRuntime from "react/jsx-runtime";
 
 var x = JsxRuntime.jsx("img", {
-      src: "icon-x.svg"
+      height: "50%",
+      src: "icon-x.svg",
+      width: "50%"
     });
 
 var o = JsxRuntime.jsx("img", {
-      src: "icon-o.svg"
+      height: "50%",
+      src: "icon-o.svg",
+      width: "50%"
     });
 
 function Cell(props) {
@@ -29,7 +33,7 @@ function Cell(props) {
               children: value === "x" ? x : (
                   value === "o" ? o : JsxRuntime.jsx(JsxRuntime.Fragment, {})
                 ),
-              className: "flex justify-center items-center text-6xl mt-2 h-40 w-40 bg-slate-700 rounded-xl cursor-pointer " + hoverClass(value, props.turn) + " shadow-xl border-2 border-cyan-300",
+              className: "flex justify-center items-center text-6xl mt-2 h-20 w-20 md:h-30 md:w-30 lg:h-40 lg:w-40 bg-slate-700 rounded-xl cursor-pointer " + hoverClass(value, props.turn) + " shadow-xl border-2 border-cyan-300",
               id: "cell",
               onClick: props.onClick
             });

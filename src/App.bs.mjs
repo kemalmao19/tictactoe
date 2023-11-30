@@ -70,10 +70,11 @@ function App(props) {
                       cellClick: handleClick
                     }),
                 JsxRuntime.jsx(Reset.make, {
-                      setBoard: setCell
+                      setBoard: setCell,
+                      playerTurn: setTurn
                     })
               ],
-              className: "bg-slate-900 flex flex-col items-center py-10"
+              className: "flex flex-col items-center py-10"
             });
 }
 

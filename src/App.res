@@ -39,10 +39,10 @@ let make = () => {
     Some(()=>checkWinner())
   }, [cell])
 
-  <div className="bg-slate-900 flex flex-col items-center py-10"> 
+  <div className="flex flex-col items-center py-10"> 
     <Header turn=turn/>
     <Board turn={turn} cell={cell} cellClick={handleClick}/>
-    <Reset setBoard=setCell/>
+    <Reset setBoard=setCell playerTurn=setTurn />
   </div>
 
 }

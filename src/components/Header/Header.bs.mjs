@@ -2,19 +2,25 @@
 
 import * as JsxRuntime from "react/jsx-runtime";
 
-var x = JsxRuntime.jsx("img", {
-      height: "20",
-      src: "/icon-x.svg",
-      width: "20"
-    });
-
-var o = JsxRuntime.jsx("img", {
-      height: "20",
-      src: "/icon-o.svg",
-      width: "20"
-    });
-
 function Header(props) {
+  var iconTurn = function (whichTrun) {
+    switch (whichTrun) {
+      case "o" :
+          return JsxRuntime.jsx("img", {
+                      height: "20",
+                      src: "/icon-o.svg",
+                      width: "20"
+                    });
+      case "x" :
+          return JsxRuntime.jsx("img", {
+                      height: "20",
+                      src: "/icon-x.svg",
+                      width: "20"
+                    });
+      default:
+        return JsxRuntime.jsx(JsxRuntime.Fragment, {});
+    }
+  };
   return JsxRuntime.jsxs("div", {
               children: [
                 JsxRuntime.jsxs("div", {
@@ -34,13 +40,15 @@ function Header(props) {
                     }),
                 JsxRuntime.jsxs("div", {
                       children: [
-                        props.turn === "x" ? x : o,
+                        JsxRuntime.jsx("div", {
+                              children: iconTurn(props.turn)
+                            }),
                         JsxRuntime.jsx("p", {
                               children: "Turn",
                               className: "text-xl font-bold text-slate-300"
                             })
                       ],
-                      className: "flex gap-1"
+                      className: "flex gap-1 items-center"
                     }),
                 JsxRuntime.jsxs("div", {
                       children: [
@@ -66,8 +74,6 @@ function Header(props) {
 var make = Header;
 
 export {
-  x ,
-  o ,
   make ,
 }
-/* x Not a pure module */
+/* react/jsx-runtime Not a pure module */
