@@ -1,4 +1,5 @@
-# ReScript / Vite Starter Template
+# Tictactoe
+![tictactoe]("./images/ss.png")
 
 This is a Vite-based template with following setup:
 
