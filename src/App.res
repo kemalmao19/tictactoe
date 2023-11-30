@@ -55,14 +55,14 @@ let make = () => {
     }
   }
 
-  React.useEffect1(()=>{
+  React.useEffect(()=>{
     Some(()=>checkWin())
-  }, [cell])
+  })
 
   <div className="flex flex-col items-center justify-center h-screen lg:my-10"> 
-    <Header turn=turn/>
+    <Header turn=turn game=game/>
     <Board onGame={game} turn={turn} cell={cell} cellClick={handleClick}/>
-    <Reset setBoard=setCell playerTurn=setTurn onGame=checkWin />
+    <Reset setBoard=setCell playerTurn=setTurn onGame=setGame />
   </div>
 
 }

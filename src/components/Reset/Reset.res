@@ -2,9 +2,9 @@ open State
 @react.component
 let make = (~setBoard, ~playerTurn, ~onGame) => {
     let handleReset = () => {
+        onGame(_=>true)
         setBoard(_=>state)
         playerTurn(_=>"x")
-        onGame()
     }
     <button 
         id="btn"

@@ -44,7 +44,7 @@ function Header(props) {
                               children: iconTurn(props.turn)
                             }),
                         JsxRuntime.jsx("p", {
-                              children: "Turn",
+                              children: props.game ? "Turn" : "Win",
                               className: "text-xl font-bold text-slate-300"
                             })
                       ],
