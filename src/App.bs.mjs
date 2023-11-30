@@ -6,7 +6,6 @@ import * as Reset from "./components/Reset/Reset.bs.mjs";
 import * as State from "./components/State/State.bs.mjs";
 import * as React from "react";
 import * as Header from "./components/Header/Header.bs.mjs";
-import * as Belt_Option from "rescript/lib/es6/belt_Option.js";
 import * as JsxRuntime from "react/jsx-runtime";
 
 function App(props) {
@@ -20,6 +19,9 @@ function App(props) {
       });
   var setTurn = match$1[1];
   var turn = match$1[0];
+  var match$2 = React.useState(function () {
+        return true;
+      });
   var handleClick = function (index) {
     if (cell[index] !== "") {
       return ;
@@ -39,26 +41,6 @@ function App(props) {
                   }));
     }
   };
-  React.useEffect((function () {
-          return (function (param) {
-                    for(var i = 0 ,i_finish = State.winningCombination.length; i < i_finish; ++i){
-                      var combo = State.winningCombination[i];
-                      var cellCombo = Belt_Option.getWithDefault(combo, []);
-                      if (cellCombo.length !== 3) {
-                        throw {
-                              RE_EXN_ID: "Match_failure",
-                              _1: [
-                                "App.res",
-                                27,
-                                10
-                              ],
-                              Error: new Error()
-                            };
-                      }
-                      
-                    }
-                  });
-        }), [cell]);
   return JsxRuntime.jsxs("div", {
               children: [
                 JsxRuntime.jsx(Header.make, {
@@ -67,14 +49,15 @@ function App(props) {
                 JsxRuntime.jsx(Board.make, {
                       cell: cell,
                       turn: turn,
-                      cellClick: handleClick
+                      cellClick: handleClick,
+                      onGame: match$2[0]
                     }),
                 JsxRuntime.jsx(Reset.make, {
                       setBoard: setCell,
                       playerTurn: setTurn
                     })
               ],
-              className: "flex flex-col items-center justify-center h-screen my-10"
+              className: "flex flex-col items-center justify-center h-screen lg:my-10"
             });
 }
 

@@ -6,6 +6,7 @@ import * as Belt_Array from "rescript/lib/es6/belt_Array.js";
 import * as JsxRuntime from "react/jsx-runtime";
 
 function Board(props) {
+  var onGame = props.onGame;
   var cellClick = props.cellClick;
   var turn = props.turn;
   return JsxRuntime.jsx("div", {
@@ -15,7 +16,8 @@ function Board(props) {
                                   turn: turn,
                                   onClick: (function (param) {
                                       Curry._1(cellClick, index);
-                                    })
+                                    }),
+                                  game: onGame
                                 }, String(index));
                     })),
               className: "grid grid-cols-3 mt-10 gap-5",
