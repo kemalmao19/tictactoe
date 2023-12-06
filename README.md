@@ -1,5 +1,5 @@
 # Tictactoe
-![tictactoe](https://raw.githubusercontent.com/kemalmao19/tictactoe/main/images/ss.png?token=GHSAT0AAAAAACJ4AVEX35DVMRPHTQ5BZDMEZLIRIPA)
+![tictactoe](./images/ss.png)
 
 This is a Vite-based template with following setup:
 
